@@ -5,12 +5,22 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
+    "element-ui": "^2.15.6",
+    "imgpond": "^0.4.6",
+    "lodash": "^4.17.21",
+    "px2rem-loader": "^0.1.9",
+    "sftp-uploader": "^0.1.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
+    "vuedraggable": "^2.24.3",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -21,12 +31,21 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "compression-webpack-plugin": "^9.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.4",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "lint-staged": "^12.1.7",
+    "only-allow": "^1.0.0",
     "prettier": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.11"
+  },
+  "lint-staged": {
+    "*.{md,js,jsx,ts,tsx,vue}": "prettier --write",
+    "*.{js,jsx,ts,tsx,vue}": "pnpm run lint"
   }
 }
